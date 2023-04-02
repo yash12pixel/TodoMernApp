@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  todo_client:
+    container_name: todo_client
+    image: todo_client_image
+    stdin_open: true
+    tty: true
+    build: ./client 
+    ports:
+      - "3000:3000"
+  todo_server:
+    container_name: todo_server
+    image: todo_server_image
+    build: ./server
+    ports:
+      - "5001:5001"
